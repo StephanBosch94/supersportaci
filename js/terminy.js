@@ -91,7 +91,7 @@
       "</div></div></div>" +
       '<a href="#" class="slot-button w-button">Přihláška</a></div>' +
       '<div class="form-block w-form" style="display:none">' +
-      '<form class="terminform" method="POST" action="https://formspree.io/f/' +
+      '<form class="terminform" method="POST" action="#" data-formspree="https://formspree.io/f/' +
       esc(formId) +
       '" id="prihlaska-' +
       esc(id) +
