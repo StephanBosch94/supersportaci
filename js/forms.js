@@ -1,3 +1,5 @@
+var NOTIFY = "info@supersportaci.cz,supersportacitabor@gmail.com";
+
 function formEndpoint(form) {
   return form.getAttribute("data-formspree") || "";
 }
@@ -35,9 +37,12 @@ document.addEventListener(
       if (waitText) button.value = waitText;
     }
 
+    var data = new FormData(form);
+    data.set("_cc", NOTIFY);
+
     fetch(endpoint, {
       method: "POST",
-      body: new FormData(form),
+      body: data,
       headers: { Accept: "application/json" },
     })
       .then(function (response) {
