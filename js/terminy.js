@@ -89,8 +89,11 @@
       "</div></div></div>" +
       (details ? '<div class="rich-text-block w-richtext">' + details + "</div>" : "") +
       "</div></div></div>" +
-      '<a href="#" class="slot-button w-button">Přihláška</a></div>' +
+      '<a href="#" class="slot-button w-button">Přihláška</a>' +
       '<div class="form-block w-form" style="display:none">' +
+      '<button type="button" class="form-close" aria-label="Zavřít">' +
+      '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
+      "</button>" +
       '<form class="terminform" method="POST" action="#" data-formspree="https://formspree.io/f/' +
       esc(formId) +
       '" id="prihlaska-' +
@@ -149,7 +152,7 @@
       "</form>" +
       '<div class="success-message-2 w-form-done"><div class="text-block-14">Děkujeme! Váš formulář byl přijat!</div></div>' +
       '<div class="error-message w-form-fail"><div>Ups! Při odesílání formuláře se něco pokazilo.</div></div>' +
-      "</div></div></div>"
+      "</div></div></div></div>"
     );
   }
 

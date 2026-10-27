@@ -76,13 +76,27 @@ window.bindTermForms = function (root) {
     button.addEventListener("click", function (event) {
       event.preventDefault();
       var slot = button.closest(".time-slot");
-      var block = slot && slot.nextElementSibling;
-      if (!block || !block.classList.contains("form-block")) return;
+      var block = slot && slot.querySelector(".form-block");
+      if (!block) return;
       var willOpen = block.style.display !== "flex";
       root.querySelectorAll(".form-block").forEach(function (item) {
         item.style.display = "none";
       });
+      root.querySelectorAll(".time-slot.is-open").forEach(function (card) {
+        card.classList.remove("is-open");
+      });
       block.style.display = willOpen ? "flex" : "none";
+      if (willOpen) slot.classList.add("is-open");
+    });
+  });
+  root.querySelectorAll(".form-close").forEach(function (close) {
+    if (close.dataset.bound === "1") return;
+    close.dataset.bound = "1";
+    close.addEventListener("click", function () {
+      var slot = close.closest(".time-slot");
+      var block = close.closest(".form-block");
+      if (block) block.style.display = "none";
+      if (slot) slot.classList.remove("is-open");
     });
   });
 

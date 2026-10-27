@@ -176,6 +176,33 @@
     }
 
     .time-slot {
+        position: relative;
         padding-bottom: 24px;
     }
-</style><script src="/js/forms.js?v=4"></script><script src="/js/terminy.js?v=3"></script></body></html>
+
+    .form-close {
+        position: absolute;
+        top: 24px;
+        right: 16px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border: 0;
+        border-radius: 4px;
+        background: transparent;
+        color: #1a1b1f;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .time-slot.is-open .location-name {
+        padding-right: 36px;
+    }
+
+    .time-slot.is-open .slot-button {
+        display: none;
+    }
+</style><script src="/js/forms.js?v=5"></script><script src="/js/terminy.js?v=4"></script></body></html>
